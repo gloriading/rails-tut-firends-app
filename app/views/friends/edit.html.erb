@@ -1,6 +1,6 @@
-<h1>Editing Friend</h1>
+<h1 class="my-5">Editing Friend</h1>
 
 <%= render 'form', friend: @friend %>
 
-<%= link_to 'Show', @friend %> |
-<%= link_to 'Back', friends_path %>
+<%= link_to 'Show', @friend, class: "btn btn-light border mt-5" %>
+<%= link_to 'Back', friends_path, class: "btn btn-secondary mt-5" %>
