@@ -36,6 +36,10 @@
     <%= form.text_field :address, class: "form-control"  %>
   </div>
 
+  <div class="field mb-3">
+    <%= form.number_field :user_id, id: :friend_user_id, class: "form-control", value: current_user.id, type: "hidden"  %>
+  </div>
+
   <div class="actions mt-5">
     <%= form.submit class: "btn btn-primary" %>
   </div>

@@ -62,6 +62,20 @@ Depending on your application's configuration some manual setup may be required:
 
 3. Create db `rails generate devise user` & `rails db:migrate`
 
+## Associations
+
+- models/friend.rb, add `belongs_to :user`
+- models/user.rb, add `has_many :friends`
+- create new migration to add a column in friends table: -
+
+  ```
+     rails g migration add_user_id_to_friends user_id:integer:index
+     rails db:migrate
+  ```
+
+- to get user id, use `current_user.id` from devise
+- add `user_id` to the permit param in friends_controller
+
 ## References
 
 - Supported data types: https://guides.rubyonrails.org/v3.2/migrations.html
