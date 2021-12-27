@@ -11,8 +11,7 @@ $font-serif: "Playfair Display", serif;
   background-size: cover;
   // needed to prevent janky scrolling in Safari
   backface-visibility: hidden;
-  //100% height of the viewport
-  height: 500px;
+  height: calc(100vh - 56px);
   max-height: 100vh;
   overflow: hidden;
   position: relative;
@@ -50,6 +49,7 @@ $font-serif: "Playfair Display", serif;
 
   @media screen and (min-width: 640px) {
     height: 100%;
+    padding: 30px;
   }
 
   p {
@@ -72,11 +72,20 @@ $font-serif: "Playfair Display", serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 30px;
-  padding: 20px 90px;
+  padding: 20px 60px;
   text-decoration: none;
 
+  &.last {
+    margin-left: 1rem;
+  }
+
   @media screen and (max-width: 640px) {
+    font-size: 18px;
     padding: 16px 32px;
+
+    &.last {
+      margin-left: 0;
+    }
   }
 }
 
@@ -85,7 +94,7 @@ $font-serif: "Playfair Display", serif;
   font-family: $font-serif;
   // Respond to viewport width–works well since
   // we're sizing the image according viewport height
-  font-size: 17vw;
+  font-size: 5rem;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 1.1;
@@ -93,8 +102,11 @@ $font-serif: "Playfair Display", serif;
   text-align: left;
   width: 85%;
 
-  @media screen and (min-width: 640px) {
-    font-size: 10vw;
+  @media screen and (max-width: 640px) {
+    font-size: 3rem;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 2rem;
   }
 }
 

@@ -1,7 +1,19 @@
 <section class="hero image-as-background" style="background-image: url('https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&dpr=2&fit=crop&fm=jpg&h=700&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300');">
   <div class="hero-container">
     <p class="animate fadeInLeft delay-400">Rails Friends</p>
-    <h1 class="hero-title animate fadeInLeft delay-600">Hello. 2022</h1>
-    <a href="#" class="hero-button animate fadeInLeft delay-800" title="Click to see more">Click Me</a>
+    <% if user_signed_in? %>
+      <h1 class="hero-title animate fadeInLeft delay-600">
+          Welcome back!
+      </h1>
+      <%= link_to 'Your Friends', friends_path, class: "hero-button animate fadeInLeft delay-800", title: "See Friends List" %>
+    <% else %>
+      <h1 class="hero-title animate fadeInLeft delay-600">
+        Hello. 2022
+      </h1>
+      <%= link_to 'Sign In', new_user_session_path, class: "hero-button animate fadeInLeft delay-800", title: "Sign In" %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: "hero-button last animate fadeInLeft delay-800", title: "Sign Up" %>
+    <% end %>
+    
+   
   </div>
 </section>
